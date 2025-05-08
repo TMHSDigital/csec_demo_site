@@ -41,11 +41,21 @@ function createToolCard(tool) {
   card.className = 'tool-card';
   card.setAttribute('data-category', tool.category);
   
+  // Icon by category
+  let icon = '';
+  if (tool.category === 'network') icon = '🌐';
+  else if (tool.category === 'forensics') icon = '🕵️';
+  else if (tool.category === 'pentest') icon = '🛡️';
+  else icon = '🔧';
+
   card.innerHTML = `
     <div class="tool-card-header">
-      <h3 class="tool-name">${sanitizeHTML(tool.name)}</h3>
-      <span class="tool-category">${sanitizeHTML(tool.categoryDisplay)}</span>
-      <p class="tool-description">${sanitizeHTML(tool.description)}</p>
+      <span class="tool-icon" aria-hidden="true">${icon}</span>
+      <div>
+        <h3 class="tool-name">${sanitizeHTML(tool.name)}</h3>
+        <span class="tool-category">${sanitizeHTML(tool.categoryDisplay)}</span>
+        <p class="tool-description">${sanitizeHTML(tool.description)}</p>
+      </div>
     </div>
     <div class="tool-card-body">
       <div class="code-block">
