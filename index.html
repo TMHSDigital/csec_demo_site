@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cybersecurity Tools Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- No external CDNs as per requirement -->
+    <meta name="description" content="A showcase of essential cybersecurity tools">
+    <!-- Security headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="no-referrer">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>CyberSec Toolkit</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <span class="light-icon">☀️</span>
+                    <span class="dark-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Essential Cybersecurity Tools</h2>
+                <p>A curated collection of open-source security tools for professionals and enthusiasts</p>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search tools..." aria-label="Search tools">
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="tools-section">
+            <div class="container">
+                <div class="filter-container">
+                    <h3>Filter by Category:</h3>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="network">Network Analysis</button>
+                        <button class="filter-btn" data-filter="forensics">Forensics</button>
+                        <button class="filter-btn" data-filter="pentest">Penetration Testing</button>
+                    </div>
+                </div>
+
+                <div class="tools-grid" id="tools-container">
+                    <!-- Tool cards will be generated here via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About This Project</h2>
+                <p>This resource is designed to help security professionals and enthusiasts discover and learn about essential cybersecurity tools. All tools featured are open-source and widely used in the industry.</p>
+                <p>Each tool entry includes basic installation commands and usage examples to help you get started quickly. For comprehensive documentation, please visit the official documentation links provided.</p>
+                
+                <h3>Security Testing Policy</h3>
+                <p><strong>This site is designated as a security testing environment for authorized users.</strong> As the owner of this domain, you may conduct security testing activities against this website for educational and improvement purposes.</p>
+                <p>The following activities are permitted on this domain only:</p>
+                <ul>
+                    <li>Vulnerability scanning</li>
+                    <li>Network mapping</li>
+                    <li>Port scanning</li>
+                    <li>Web application security testing</li>
+                    <li>Non-destructive penetration testing</li>
+                </ul>
+                <p>All security testing must be conducted responsibly, without disrupting service availability for other users, and without exposing or compromising any user data.</p>
+                <p><a href="test-environment.html" class="tool-docs-link">Visit Testing Environment →</a></p>
+                <p><a href="security_policy.md" class="tool-docs-link">Full Security Policy →</a></p>
+                
+                <h3>Contributing</h3>
+                <p>Want to add a tool or improve the site? Check out our <a href="https://github.com/TMHSDigtal/cybersec-tools-hub">GitHub repository</a> and follow the contribution guidelines in the README.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="disclaimer">
+                    <h3>Disclaimer</h3>
+                    <p>These tools are provided for educational and professional use only. Always ensure you have appropriate authorization before using security tools on any system or network.</p>
+                    <p><strong>Legal Notice:</strong> This website is owned and operated by TM Hospitality Strategies. As the site owner, I explicitly authorize security testing against this domain for educational and security improvement purposes. Any security testing must be limited to this domain only and conducted in a responsible manner. Unauthorized testing of other systems or networks is illegal and prohibited.</p>
+                </div>
+                <div class="contact">
+                    <h3>Contact</h3>
+                    <p>For questions or suggestions, please <a href="mailto:contact@example.com">email us</a> or open an issue on GitHub.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 TM Hospitality Strategies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/tools-data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

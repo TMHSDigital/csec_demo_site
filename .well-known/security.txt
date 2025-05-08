@@ -1,0 +1,9 @@
+# Security Policy for TMHSDigtal Cybersecurity Tools Hub
+Contact: mailto:contact@example.com
+Expires: 2026-12-31T23:59:59Z
+Preferred-Languages: en
+Canonical: https://tmhsdigtal.github.io/.well-known/security.txt
+Policy: https://tmhsdigtal.github.io/security_policy.md
+# This domain is explicitly designated as a security testing environment.
+# The owner authorizes security testing against this domain for educational
+# and security improvement purposes. 

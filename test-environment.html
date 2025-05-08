@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Testing Environment</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--card-bg-color);
+        }
+        
+        .test-title {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+        
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: var(--code-bg-color);
+            border-radius: 5px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>CyberSec Toolkit - Test Environment</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#tools">Tools</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <span class="light-icon">☀️</span>
+                    <span class="dark-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Security Testing Environment</h2>
+            <div class="warning">
+                <strong>Educational Purpose Only:</strong> This page contains deliberate vulnerabilities for educational testing. The vulnerabilities are isolated to this page only and do not affect the main site or any user data. All testing must be done responsibly and ethically.
+            </div>
+            
+            <p>This page provides a safe environment to test various security tools and techniques. Each section below contains a different type of vulnerability that can be safely exploited for learning purposes.</p>
+            
+            <div class="test-section">
+                <h3 class="test-title">1. XSS (Cross-Site Scripting) Test</h3>
+                <p>Enter text below, it will be displayed without proper sanitization:</p>
+                <input type="text" id="xss-input" placeholder="Enter text or script">
+                <button onclick="document.getElementById('xss-result').innerHTML = document.getElementById('xss-input').value">Submit</button>
+                <div class="result" id="xss-result"></div>
+                <p><strong>Tool to test:</strong> Browser Developer Tools, OWASP ZAP</p>
+            </div>
+            
+            <div class="test-section">
+                <h3 class="test-title">2. SQL Injection Simulation</h3>
+                <p>This simulates a SQL injection vulnerability. Try entering <code>admin' OR '1'='1</code> as the username:</p>
+                <input type="text" id="sql-username" placeholder="Username">
+                <input type="password" id="sql-password" placeholder="Password">
+                <button onclick="checkLogin()">Login</button>
+                <div class="result" id="sql-result"></div>
+                <p><strong>Tool to test:</strong> OWASP ZAP, Burp Suite</p>
+            </div>
+            
+            <div class="test-section">
+                <h3 class="test-title">3. Insecure Direct Object Reference</h3>
+                <p>This simulates accessing user profiles directly. Try changing the user ID:</p>
+                <input type="number" id="idor-id" value="1" min="1" max="3">
+                <button onclick="getUserProfile()">Get User Profile</button>
+                <div class="result" id="idor-result"></div>
+                <p><strong>Tool to test:</strong> Burp Suite Intruder</p>
+            </div>
+            
+            <div class="test-section">
+                <h3 class="test-title">4. Basic Headers and Information Disclosure</h3>
+                <p>This section reveals some server information that would typically be hidden:</p>
+                <button onclick="getServerInfo()">Show Server Info</button>
+                <div class="result" id="server-result"></div>
+                <p><strong>Tool to test:</strong> Nmap, OWASP ZAP, Burp Suite</p>
+            </div>
+            
+            <div class="test-section">
+                <h3 class="test-title">5. Unvalidated Redirects</h3>
+                <p>This demonstrates an unvalidated redirect. Try entering different URLs:</p>
+                <input type="text" id="redirect-url" placeholder="Enter a URL">
+                <button onclick="redirectTo()">Redirect</button>
+                <p><strong>Tool to test:</strong> Burp Suite, Browser Developer Tools</p>
+            </div>
+            
+            <p><strong>Note:</strong> All vulnerabilities on this page are isolated and do not affect the main site or any real data. They are meant for educational purposes only.</p>
+            
+            <div class="test-section">
+                <h3 class="test-title">Security Resources</h3>
+                <p>The following resources are available to help with your security testing:</p>
+                <ul>
+                    <li><a href="tools/SECURITY_TESTING_GUIDE.md" target="_blank">Security Testing Guide</a> - Step-by-step instructions for testing this environment</li>
+                    <li><a href="tools/VULNERABILITY_REPORT_TEMPLATE.md" target="_blank">Vulnerability Report Template</a> - Document vulnerabilities you discover</li>
+                    <li><a href="tools/SECURITY_AUDIT_CHECKLIST.md" target="_blank">Security Audit Checklist</a> - Comprehensive security review guide</li>
+                    <li><a href="tools/TOOL_SUBMISSION_TEMPLATE.md" target="_blank">Tool Submission Template</a> - Contribute new security tools</li>
+                </ul>
+                <p>Use these templates to practice professional security documentation alongside your technical testing.</p>
+            </div>
+            
+            <p>Return to <a href="index.html">Home Page</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="disclaimer">
+                    <h3>Disclaimer</h3>
+                    <p>This testing environment is provided for educational purposes only. All vulnerabilities are intentional and contained within this page.</p>
+                    <p><strong>Legal Notice:</strong> As the owner of this domain, I explicitly authorize security testing against this domain for educational purposes. Any security testing must be limited to this domain only and conducted in a responsible manner.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 TM Hospitality Strategies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/tools-data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Mock database for testing purposes
+        const users = [
+            { id: 1, username: 'admin', password: 'secretpassword', name: 'Administrator', role: 'Admin' },
+            { id: 2, username: 'user', password: 'password123', name: 'Regular User', role: 'User' },
+            { id: 3, username: 'guest', password: 'guest', name: 'Guest User', role: 'Guest' }
+        ];
+        
+        // SQL Injection Simulation
+        function checkLogin() {
+            const username = document.getElementById('sql-username').value;
+            const password = document.getElementById('sql-password').value;
+            const resultDiv = document.getElementById('sql-result');
+            
+            // Simulating vulnerable SQL query
+            if (username.includes("'") && username.toLowerCase().includes("or")) {
+                resultDiv.innerHTML = "Login successful!<br>User: Administrator<br>Role: Admin<br><span style='color:red;'>(SQL Injection detected)</span>";
+            } else {
+                // Normal login check
+                const user = users.find(u => u.username === username && u.password === password);
+                if (user) {
+                    resultDiv.innerHTML = `Login successful!<br>User: ${user.name}<br>Role: ${user.role}`;
+                } else {
+                    resultDiv.innerHTML = "Login failed. Invalid username or password.";
+                }
+            }
+        }
+        
+        // IDOR Simulation
+        function getUserProfile() {
+            const id = document.getElementById('idor-id').value;
+            const resultDiv = document.getElementById('idor-result');
+            const user = users.find(u => u.id === parseInt(id));
+            
+            if (user) {
+                resultDiv.innerHTML = `
+                    User ID: ${user.id}<br>
+                    Name: ${user.name}<br>
+                    Role: ${user.role}<br>
+                    Username: ${user.username}<br>
+                    Password: ${user.password} <span style='color:red;'>(Password exposed due to IDOR)</span>
+                `;
+            } else {
+                resultDiv.innerHTML = "User not found.";
+            }
+        }
+        
+        // Server Information Disclosure
+        function getServerInfo() {
+            const resultDiv = document.getElementById('server-result');
+            resultDiv.innerHTML = `
+                Server: GitHub Pages<br>
+                Framework: Static HTML/CSS/JS<br>
+                Last Updated: ${new Date().toLocaleDateString()}<br>
+                Simulated Internal IP: 10.0.0.15<br>
+                Simulated Database: MySQL 8.0.23<br>
+                <span style='color:red;'>(Information disclosure vulnerability)</span>
+            `;
+        }
+        
+        // Unvalidated Redirect
+        function redirectTo() {
+            const url = document.getElementById('redirect-url').value;
+            if (url) {
+                // This is intentionally vulnerable for testing - don't use this in real sites!
+                window.location.href = url;
+            }
+        }
+    </script>
+</body>
+</html> 

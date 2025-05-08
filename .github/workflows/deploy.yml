@@ -1,0 +1,49 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Set this to your default branch
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+        
+      # Security headers setup
+      - name: Create _headers file
+        run: |
+          mkdir -p _site
+          cat > _site/_headers << EOL
+          /*
+            Content-Security-Policy: default-src 'self'; script-src 'self'
+            X-Content-Type-Options: nosniff
+            X-Frame-Options: DENY
+            Referrer-Policy: no-referrer
+            Permissions-Policy: geolocation=(), microphone=(), camera=()
+          EOL
+
+      # Copy all files to the _site directory
+      - name: Copy files to _site
+        run: |
+          cp -r css js images *.html _site/
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2 
