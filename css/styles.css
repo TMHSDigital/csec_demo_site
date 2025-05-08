@@ -41,7 +41,7 @@ body {
 }
 
 [data-theme="dark"] body {
-  background: linear-gradient(120deg, #121212 0%, #263238 100%);
+  background: linear-gradient(120deg, #181c22 0%, #232b36 100%);
 }
 
 .container {
@@ -547,4 +547,110 @@ footer a:hover {
 ::-webkit-scrollbar-thumb {
   background: #b0bec5;
   border-radius: 8px;
+}
+
+[data-theme="dark"] .about-section, [data-theme="dark"] .contributing-section {
+  background: linear-gradient(120deg, #232b36 0%, #181c22 100%);
+  border-left: 6px solid #1976d2;
+  box-shadow: 0 4px 24px 0 rgba(33,150,243,0.18);
+}
+
+[data-theme="dark"] .contributing-section {
+  background: linear-gradient(120deg, #232b36 0%, #1a222b 100%);
+  border-left: 6px solid #42a5f5;
+}
+
+[data-theme="dark"] .about-section, [data-theme="dark"] .contributing-section, [data-theme="dark"] .footer-content > div {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .about-section h2, [data-theme="dark"] .contributing-section h2, [data-theme="dark"] .footer-content h3 {
+  color: #90caf9;
+}
+
+[data-theme="dark"] .about-section a, [data-theme="dark"] .contributing-section a, [data-theme="dark"] footer a {
+  color: #90caf9;
+}
+
+[data-theme="dark"] .about-section a:hover, [data-theme="dark"] .contributing-section a:hover, [data-theme="dark"] footer a:hover {
+  color: #42a5f5;
+}
+
+[data-theme="dark"] .section-divider {
+  background: linear-gradient(90deg, #263238 0%, #181c22 100%);
+}
+
+[data-theme="dark"] .footer-content > div {
+  background: linear-gradient(120deg, #232b36 0%, #181c22 100%);
+  box-shadow: 0 4px 24px 0 rgba(33,150,243,0.22);
+}
+
+[data-theme="dark"] .footer-content .footer-icon {
+  color: #90caf9;
+}
+
+[data-theme="dark"] footer {
+  background: linear-gradient(120deg, #181c22 0%, #232b36 100%);
+  border-top: 2px solid #263238;
+}
+
+[data-theme="dark"] .tool-card {
+  background-color: #232b36;
+  color: #e0e0e0;
+  box-shadow: 0 4px 24px 0 rgba(33,150,243,0.18);
+}
+
+[data-theme="dark"] .tool-card-header {
+  border-bottom: 1px solid #263238;
+}
+
+[data-theme="dark"] .tool-category {
+  background-color: #1976d2;
+  color: #fff;
+}
+
+[data-theme="dark"] .filter-btn {
+  background-color: #181c22;
+  color: #e0e0e0;
+  border: 1px solid #263238;
+}
+
+[data-theme="dark"] .filter-btn.active {
+  background-color: #1976d2;
+  color: #fff;
+  border-color: #1976d2;
+}
+
+[data-theme="dark"] .filter-btn:hover {
+  background-color: #263238;
+}
+
+[data-theme="dark"] .copy-btn {
+  background: #263238;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .copy-btn.copied {
+  background: #42a5f5;
+  color: #fff;
+}
+
+[data-theme="dark"] .code-block {
+  background-color: #181c22;
+}
+
+[data-theme="dark"] .tools-section {
+  background: none;
+}
+
+[data-theme="dark"] .copyright {
+  color: #b0bec5;
+  background: none;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar {
+  background: #232b36;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #263238;
 } 
