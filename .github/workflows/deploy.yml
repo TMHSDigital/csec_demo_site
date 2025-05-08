@@ -42,7 +42,9 @@ jobs:
           cp -r css js images *.html _site/
           
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v1.1.0
+        with:
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
